@@ -10,10 +10,16 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+typealias MyresponseType = (User) -> Void
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let myblock:MyresponseType = { u in
+            print(u.name)
+        }
+        
+        
+        getUser(id: "savr", pass: "pass", response: myblock)
         return true
     }
 
@@ -29,8 +35,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        
+    }
+    
+    struct User {
+        let name:String
     }
 
+    func getUser(id:String, pass:String, response:@escaping MyresponseType) {
+        print("Disvvv")
+        DispatchQueue.global(qos: .background).async {
+            let user = User(name: "satish")
+            
+            DispatchQueue.main.async {
+                response(user)
+            }
+            
+        }
+        
+    }
 
+    func onRespose(of user:User) {
+        
+    }
 }
 

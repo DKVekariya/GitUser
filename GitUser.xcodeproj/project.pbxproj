@@ -17,6 +17,7 @@
 		42549EB425F1EA6F007D54A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42549EB225F1EA6F007D54A4 /* LaunchScreen.storyboard */; };
 		42DCAA7925F78BEF00D35446 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DCAA7825F78BEF00D35446 /* ActivityViewController.swift */; };
 		42DCAA7C25F78C0900D35446 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DCAA7B25F78C0900D35446 /* Users.swift */; };
+		42DCAA8025F78EDF00D35446 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DCAA7F25F78EDF00D35446 /* UserTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		42549EB525F1EA6F007D54A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42DCAA7825F78BEF00D35446 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		42DCAA7B25F78C0900D35446 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		42DCAA7F25F78EDF00D35446 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				42549EAB25F1EA6E007D54A4 /* LoginViewController.swift */,
 				42DCAA7B25F78C0900D35446 /* Users.swift */,
+				42DCAA7F25F78EDF00D35446 /* UserTableViewController.swift */,
 				42457B8925F764F200FA3A5B /* UserTableViewCell.swift */,
 				42457B9125F7658A00FA3A5B /* UserDetailViewController.swift */,
 				42DCAA7825F78BEF00D35446 /* ActivityViewController.swift */,
@@ -163,6 +166,7 @@
 				42549EAC25F1EA6E007D54A4 /* LoginViewController.swift in Sources */,
 				42549EA825F1EA6E007D54A4 /* AppDelegate.swift in Sources */,
 				42549EAA25F1EA6E007D54A4 /* SceneDelegate.swift in Sources */,
+				42DCAA8025F78EDF00D35446 /* UserTableViewController.swift in Sources */,
 				42DCAA7C25F78C0900D35446 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

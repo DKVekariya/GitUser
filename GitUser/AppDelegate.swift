@@ -10,17 +10,11 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-typealias MyresponseType = (User) -> Void
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        let myblock:MyresponseType = { u in
-            print(u.name)
-        }
-        
-        
-        getUser(id: "savr", pass: "pass", response: myblock)
-        return true
+        // Override point for customization after application launch
+    return true
     }
 
     // MARK: UISceneSession Lifecycle
@@ -38,25 +32,6 @@ typealias MyresponseType = (User) -> Void
         
     }
     
-    struct User {
-        let name:String
-    }
-
-    func getUser(id:String, pass:String, response:@escaping MyresponseType) {
-        print("Disvvv")
-        DispatchQueue.global(qos: .background).async {
-            let user = User(name: "satish")
-            
-            DispatchQueue.main.async {
-                response(user)
-            }
-            
-        }
-        
-    }
-
-    func onRespose(of user:User) {
-        
-    }
+    
 }
 

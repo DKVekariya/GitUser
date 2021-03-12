@@ -19,6 +19,7 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         guard let user = profile else { return }
         
         

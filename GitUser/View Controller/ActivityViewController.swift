@@ -16,28 +16,35 @@ class ActivityViewController: UIViewController {
             self.activityIndicator.isHidden
         }
         set {
-            self.activityIndicator.isHidden = newValue
+            newValue ? stop() : start()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        activityIndicator.isHidden = false
-        activityIndicator.color = .blue
-        activityIndicator.startAnimating()
 
     }
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     func onSuccess(_ users:[Users]) {
-        self.activityIndicator.isHidden = true
-        activityIndicator.stopAnimating()
+        stop()
     }
     
     func onError(_ error: Error) {
-        print(error)
-        self.activityIndicator.isHidden = true
+        stop()
+    }
+    
+    func start() {
+        activityIndicator.isHidden = false
+        activityIndicator.color = .blue
+        activityIndicator.startAnimating()
+    }
+    
+    func stop() {
+        activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }
 }

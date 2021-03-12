@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -34,5 +33,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let context = URLContexts.first(where: { $0.url.scheme?.lowercased() == "demogithub" }), let query = context.url.query {
+            if let code = query.split(separator: "=").last {
+                NotificationCenter.default.post(name: Notification.Name("auth-success"), object: code)
+            }
+        }
+        
+    }
 }
 

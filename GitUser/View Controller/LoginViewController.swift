@@ -18,23 +18,22 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         if let token = UserDefaults.standard.value(forKey: "key-access-token") as? String {
-           
-            func showMainViewController() {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainViewController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-                
-                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                let delegate = windowScene?.delegate as? SceneDelegate
-                
-                if let window = delegate?.window {
-                    window.rootViewController = mainViewController
-                }
-            }
             showMainViewController()
-        
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(onAuthSucess(_:)), name: NSNotification.Name("auth-success"), object: nil)
+    }
+    
+    func showMainViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let delegate = windowScene?.delegate as? SceneDelegate
+        
+        if let window = delegate?.window {
+            window.rootViewController = mainViewController
+        }
     }
     
     
